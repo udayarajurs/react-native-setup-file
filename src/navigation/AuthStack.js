@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  createNativeStackNavigator
-} from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignInWelcomeScreen from '../screens/authScreens/SigninWelcomeScreen';
 import SignInScreen from '../screens/authScreens/SigninScreen';
 import DrawerNavigator from './DrawerNavigator';
@@ -12,6 +10,7 @@ const Auth = createNativeStackNavigator();
 export function AuthStack() {
   return (
     <Auth.Navigator>
+      
       <Auth.Screen
         name="SignInWelcomeScreen"
         component={SignInWelcomeScreen}
@@ -28,22 +27,14 @@ export function AuthStack() {
         }}
       />
 
-      <Auth.Screen 
-        name ="DrawerNavigator"
-        component = {DrawerNavigator}
-        options ={{
-            headerShown: false,
-                           
-        }}
-        /> 
-
       <Auth.Screen
-        name="RestaurantMapScreen"
-        component={RestaurantMapScreen}
+        name="DrawerNavigator"
+        component={DrawerNavigator}
         options={{
           headerShown: false,
         }}
       />
+
     </Auth.Navigator>
   );
 }
